@@ -1,0 +1,24 @@
+<p>employee-list works!</p>
+<div class="employe">
+    <table class="emdata">
+        <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th> Email</th>
+            <th>Actions</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees|async">
+      <td>{{employee.firstName}}</td>
+      <td>{{employee.lastName}}</td>
+      <td>{{employee.emailid}}</td>
+      <td><button (click)="deleteEmployee(employee.id)" class="btn btn-danger">Delete</button></td>
+      <td ><button (click)="empolyeedetails(employee.id)" class="btn btn-info" style="margin-left:10px;">Details</button></td>
+
+    </tr>
+    </tbody>
+    </table>
+</div>

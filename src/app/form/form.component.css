@@ -1,0 +1,20 @@
+.ng-invalid .ng-touched:not(formdata){
+    border: 1px solid red;
+}
+.btn{
+    cursor: pointer;
+}
+.form-group .form-control{
+    background: slateblue;
+    margin-top: 1px;
+    margin-right: 1px;
+}
+*{
+    background: slateblue;
+}
+.btn{
+    background: slateblue;
+
+    margin-top: 1px;
+    margin-right: 1px;
+}

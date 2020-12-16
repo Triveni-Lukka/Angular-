@@ -1,0 +1,87 @@
+<div class="container-fuild">
+<div class="row">
+   <div class="col-md-6">
+<form [formGroup]="formdata" (ngSubmit) = "onClickSubmit(formdata.value) && formdata.valid " >
+   <div class="form-group">
+<label>Name:</label>
+   <input type = "text" formControlName="firstName" class="form-control"  placeholder = "firstName" [ngClass]="{'is-invalid':
+   formdata.get('firstName').touched  && formdata.get('firstName').invalid}" > 
+   <div class="invalid-feedback">
+      <div>FirstName is Required</div>
+   </div>
+    <br/> 
+   </div>
+   <div class="form-group">
+
+    <label>LastName:</label>
+    <input type="text" formControlName="lastName"class="form-control" placeholder="lastname" [ngClass]="{'is-invalid':
+    formdata.get('lastName').touched  && formdata.get('lastName').invalid}">
+    <div class="invalid-feedback">
+      <div>LastName is Required</div>
+   </div>
+   
+    </div>
+    <div class="form-group">
+
+    <label>Email:</label>
+    <input type = "text" formControlName="emailid" class="form-control"  placeholder = "emailid"  [ngClass]="{'is-invalid':
+    formdata.get('emailid').touched  && formdata.get('emailid').invalid}"> 
+    <div *ngIf="formdata.get('emailid').touched  && formdata.get('emailid').invalid" class="invalid-feedback">
+       <div  *ngIf="formdata.get('emailid').errors.required">Email is reqired</div>
+       <div  *ngIf="formdata.get('emailid').errors.emailid">Email must Be valid</div>
+
+      
+   </div>
+   
+</div>
+<div class="form-group">
+
+    <label>Password:</label>
+    <input type = "password" formControlName="password" name = "password" class="form-control" placeholder = "passwd" [ngClass]="{'is-invalid':
+    formdata.get('password').touched  && formdata.get('password').invalid}"> 
+    <div *ngIf="formdata.get('password').touched  && formdata.get('password').invalid" class="invalid-feedback">
+      <div  *ngIf="formdata.get('password').errors.required">Password is reqired</div>
+      <div  *ngIf="formdata.get('password').errors.password">Password  minimum 8 characters</div>
+  </div>
+   
+    <br/> 
+</div>
+
+    <div class="form-group">
+       <button class="btn btn-primary" class="form-control" [disabled]="!formdata.valid">Register</button>
+    </div>
+    <div class="form-group">
+       <button type="reset"value="reset" class="btn btn-primary">Rest the Fields</button>
+    </div>
+
+   <p>   "Entered Email is :"{{emailid}}</p>
+      <br>
+  <p>"Enter Password:" {{password}}
+</p>
+<p>"Enter firstName:" {{firstName}}
+</p>
+<p>"Enter lastName:" {{lastName}}
+</p>
+</form>
+</div>
+</div>
+</div>
+
+<table style="width: 50%; border: 2px solid black;">
+   <thead>
+   <tr>
+<th>FirstName</th>
+<th>LastName</th>
+<th>Email</th>
+<th>Password</th>
+
+</tr>
+</thead>
+<tr >
+   <td>{{firstName}}</td>
+   <td>{{lastName}}</td>
+   <td>{{emailid}}</td>
+   <td>{{password}}</td>
+
+</tr>
+</table>

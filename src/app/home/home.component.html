@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>Form & Valiadtions</title>
+        
+     </head>
+        <body>
+            <div class="container-fulid">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+     <form [formGroup]="my_form" (ngSubmit)="onSubmit() ">
+
+
+<div calss=form-group>
+    <label>First Name</label>
+  <input type="text" formControlName="firstName"  class="form-control" id="firstname" [ngClass]="{'is-invalid':
+  my_form.get('firstName').touched && my_form.get('firstName').invalid}"/>
+  <div class="invalid-feedback">
+    <div >FirstName is Requird</div>
+  </div>
+  </div>
+<br>
+<div calss=form-group>
+    <label>Last Name</label>
+  <input type="text" formControlName="lastName"  class="form-control" id="lastname" [ngClass]="{'is-invalid':my_form.get('lastName').touched &&
+   my_form.get('lastName').invalid}"/>
+   <div class="invalid-feedback">
+     <div >LastName is Required</div>
+   </div>
+  </div>
+<br>
+<div calss=form-group>
+    <label>Email</label>
+  <input type="text" formControlName="email"  class="form-control" id="email" [ngClass]="{'is-invalid':my_form.get('email'.touched) && my_form.get('email').invalid}"/>
+  <div *ngIf=" my_form.get('email').touched && my_form.get('email').invalid" class="invalid-feedback">
+    <div *ngIf="my_form.get('email').errors.required" >
+Email Id is required
+    </div>
+    <div *ngIf="my_form.get('email').errors.email">Valid Email Id is required</div>
+  </div>
+
+  </div>
+<br>
+<div calss=form-group>
+    <label>Password:</label>
+  <input type="password" formControlName="password"  class="form-control" id="password" required/>
+
+  </div>
+<br>
+<div calss=form-group>
+    <label>Confirm Psswor:d</label>
+  <input type="password" formControlName="confirmPassword"  class="form-control" id="confirmPassword"/>
+
+      
+  </div>
+  <br>
+
+<div class="form-group">
+    <button class="btn btn-primary" >Register</button>
+</div>
+<div class="="form-group>
+  <button class="btn btn-primary" type="reset" value="rest">Rest</button>
+</div>
+<div *ngFor="let formvales of my_form">
+  {{formvales.firstName|json}}
+</div>
+            </form>
+        </div>
+        </div>
+        </div>
+        
+        </body>
+</html>

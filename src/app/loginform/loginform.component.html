@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <form [formGroup]="formsubmit" (ngSubmit)="onSubmit()">
+<div class="form-input">
+   <label>Email</label> 
+   <input type="text" formConontrolName="email"  id="email" required>
+</div>
+<div class="form-input">
+    <label>Password</label> 
+    <input type="text" formConontrolName="password"  id="password" required>
+ </div>
+ <button type="submit" value="submit" class="btn btn-success">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div *ngFor="let formdata of formlogin">
+    {{formdata.email|json}}
+</div>

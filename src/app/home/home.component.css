@@ -1,0 +1,11 @@
+.form-group .form-control{
+    margin-top: 5%;
+    margin-left: 20%;
+}
+*{
+background-color: aqua;
+}
+.form-group .form-control input[type="text"]{
+    margin-top: 50px;
+    padding-top: 50px;
+}
