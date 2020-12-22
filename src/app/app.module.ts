@@ -17,6 +17,7 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { LoginformComponent } from './loginform/loginform.component';
+import { FormcurdComponent } from './formcurd/formcurd.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { LoginformComponent } from './loginform/loginform.component';
     UpdateEmployeeComponent,
     EmployeeDetailsComponent,
     EmployeeListComponent,
-    LoginformComponent
+    LoginformComponent,
+    FormcurdComponent
   ],
   imports: [
     BrowserModule,

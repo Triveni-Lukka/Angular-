@@ -9,6 +9,7 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { LoginformComponent } from './loginform/loginform.component';
+import { FormcurdComponent } from './formcurd/formcurd.component';
 
 
 const routes: Routes = [  { path: 'contacts', component: ContactComponent }
@@ -20,7 +21,8 @@ const routes: Routes = [  { path: 'contacts', component: ContactComponent }
 {path:'update/:id',component:UpdateEmployeeComponent},
 {path:'details/:id',component:EmployeeDetailsComponent},
 {path:'empoylees',component:EmployeeListComponent},
-{path:'loginform',component:LoginformComponent}
+{path:'loginform',component:LoginformComponent},
+{path:'FormCurd',component:FormcurdComponent}
 
 ];
 
