@@ -32,7 +32,7 @@
                 </div>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary" [disabled]="!Formcurd-valid" >Login Form</button>
+                    <button type="submit" class="btn btn-primary" [disabled]="!Formcurd-valid" (click)="creatuser(user)" >Login Form</button>
                 </div>
                 <div class="form-group">
                     <button type="reset"value="reset" class="btn btn-primary">Rest the Fields</button>
@@ -51,12 +51,12 @@
                     <th>Email</th>
                     <th>Password</th>
                 </tr>
-                <tr  *ngFor='let data of formdata'>
-                    <td>{{data.Name}}</td>
-                    <td>{{data.Email}}</td>
-                
-                    <td>{{data.Password}}</td>
-                
+                <tr  *ngFor='let user of getusers'>
+                    <td>{{user.Name}}</td>
+                    <td>{{user.Email}}</td>
+                    <td>{{user.Password}}</td>
+                    <td><button class="btn btn-warning">Edit</button></td>
+                    <td><button class="btn btn-danger" (click)="delectuser(user.id)">Delect</button></td>
                 </tr>
                 
                 </table>
