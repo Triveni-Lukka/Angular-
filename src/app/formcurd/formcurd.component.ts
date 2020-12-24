@@ -17,6 +17,7 @@ export class FormcurdComponent implements OnInit {
   Password:any;
 formdata=[];
 getusers:Users[];
+errorMsg:any;
   ngOnInit() {
 
 
@@ -47,8 +48,11 @@ getusers:Users[];
   }
   getAllusers(){
     this.common.getAllUser().subscribe((data:Users[])=>{
-    this.getusers=data;
-    });
+    this.getusers=data;},
+    (error)=>{console.error
+    this.errorMsg=error;
+    } 
+    );
   }
 
   delectuser(id:number){
